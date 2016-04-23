@@ -166,10 +166,10 @@
             <p id="login-header">Login</p>
             <p id="pin-title">Enter pin code :</p>
             <div id="pin">
-                <div><i class="icon ion-record" ng-show="pinDotVisible['1']"></i></div>
-                <div><i class="icon ion-record" ng-show="pinDotVisible['2']"></i></div>
-                <div><i class="icon ion-record" ng-show="pinDotVisible['3']"></i></div>
-                <div><i class="icon ion-record" ng-show="pinDotVisible['4']"></i></div>
+                <div><i class="icon ion-record" ng-show="pinDotVisible[&apos;1&apos;]"></i></div>
+                <div><i class="icon ion-record" ng-show="pinDotVisible[&apos;2&apos;]"></i></div>
+                <div><i class="icon ion-record" ng-show="pinDotVisible[&apos;3&apos;]"></i></div>
+                <div><i class="icon ion-record" ng-show="pinDotVisible[&apos;4&apos;]"></i></div>
                 <i class="icon ion-backspace" ng-show="canErase" ng-click="doErase()"></i>
             </div>
             <div id="status" style="margin-top: 15px; font-size: 18px;">
@@ -177,7 +177,7 @@
                 <p style="color: #e74c3c;" ng-show="success === false">Failed.</p>
             </div>
         </ion-content>
-        <ion-digit-keyboard settings="keyboardSettings" ng-show="keyboardVisible" style="margin-bottom: 15px;"></ion-digit-keyboard>
+        <ion-digit-keyboard settings="keyboardSettings" ng-show="keyboardVisible"></ion-digit-keyboard>
     </ion-pane>
 
 </body>

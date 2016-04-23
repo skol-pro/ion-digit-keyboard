@@ -21,9 +21,7 @@
   },
   "keywords": [
     "ionic",
-    "keyboard",
-    "digital",
-    "numbers"
+    "digital", "numeric", "key", "keyboard", "number", "log", "login", "sms", "lock", "lockscreen", "dial"
   ],
   "author": "Skol (Vincent Letellier)",
   "license": "MIT"

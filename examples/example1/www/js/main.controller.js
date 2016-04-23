@@ -40,7 +40,7 @@ function MainController($scope) {
 		rightButton: {
 			html: '<i class="icon ion-log-in"></i>',
 			action: function() {
-				if ($scope.password == '0123') {
+				if ($scope.password == '1234') {
 					$scope.success = true;
 				} else {					
 					$scope.success = false;

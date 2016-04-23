@@ -18,7 +18,8 @@ angular.module('starter', ['ionic', 'ion-digit-keyboard'])
         cordova.plugins.Keyboard.disableScroll(true);
       }
       if (window.StatusBar) {
-        StatusBar.styleDefault();
+        StatusBar.overlaysWebView(true);
+        StatusBar.style(1);
       }
     });
   })
