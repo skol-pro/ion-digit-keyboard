@@ -23,8 +23,10 @@
 ##1 - Info
 Version: 1.0.0<br>
 Author: Skol (Vincent Letellier)<br>
-Email: skol.pro@gmail.com
+Email: skol.pro@gmail.com<br>
+Donations: You're really welcome to donate, any amount at any time :-)
 
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ADEZD3EL9DN5Q&lc=US&item_name=Ionic%20Digital%20Keyboard&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
 
 ##2 - Installation / loading
 Add the *ion-digit-keyboard.min.js* to your project, insert it in your index.html, add it as dependency: 
