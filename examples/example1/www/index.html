@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html ng-app="starter">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="lib/ion-digit-keyboard.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.controller.js"></script>
+
+    <!--<style tutorial="1">
+		ion-pane#login-1 {
+			background: url('img/background.jpg');
+			background-size: auto 100%;
+		}
+		ion-pane#login-1 ion-content {			
+			padding: 40px 20px 20px;
+			color: #fff;
+		}
+		ion-pane#login-1 p#login-header {
+			text-align: center;
+			font-size: 50px;
+			font-weight: 100;
+		}
+		ion-pane#login-1 p#login-header span {
+			display: inline-block;
+			font-size: 12px;
+			line-height: 14px;
+			font-weight: normal;
+			padding: 20px 0 10px;
+		}		
+		ion-pane#login-1 p#help {
+			text-align: center;
+			font-size: 12px;
+		}		
+		ion-pane#login-1 input {
+			display: block;
+			border: 1px solid rgba(255, 255, 255, 0.75);
+			color: #fff;
+			border-radius: 34px;
+			text-align: center;
+			margin: 10px auto;
+			width: 75%;
+			height: 34px;
+			line-height: 28px;
+			box-shadow: none;
+			background-color: rgba(255, 255, 255, 0.15);
+			-webkit-appearance: none;
+		}
+		ion-pane#login-1 input::-webkit-input-placeholder {
+			color: #fff;
+		}
+		ion-pane#login-1 input[type="button"] {
+			background-color: #fff !important;
+			color: #D1587B;
+			font-weight: bold;
+		}
+		
+		@media screen and (min-width: 310px) and (min-height: 540px) {
+			#login-inner {
+				position: relative;
+				width: 310px;
+				height: 540px;
+				margin: 0 auto;
+				top: 50%;
+				margin-top: -270px; /* height/2 */
+				overflow: hidden;
+			}
+		}
+	</style>-->
+
+    <style tutorial="2">
+        ion-pane#login-2 {
+            background: #333;
+            color: #fff;
+        }
+        
+        ion-pane#login-2 ion-content {
+            padding-top: 70px;
+            text-align: center;
+        }
+        
+        ion-pane#login-2 p#login-header {
+            font-size: 50px;
+            font-weight: 100;
+        }
+        
+        ion-pane#login-2 p#pin-title {
+            margin-top: 30px;
+        }
+        
+        ion-pane#login-2 #pin {
+            position: relative;
+            width: 50%;
+            display: inline-flex;
+            margin: 0 auto;
+            line-height: 40px;
+        }
+        
+        ion-pane#login-2 #pin > i {
+            position: absolute;
+            top: 15px;
+            font-size: 20px;
+            margin-left: 15px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        
+        ion-pane#login-2 #pin > i {
+            position: absolute;
+            top: 0;
+            font-size: 20px;
+            margin-left: 15px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        
+        ion-pane#login-2 #pin > i.activated {
+            color: #fff;
+        }
+        
+        ion-pane#login-2 #pin div {
+            border-bottom: 1px solid #fff;
+            height: 40px;
+            flex: 1;
+            margin: 0 5px;
+        }
+        
+        ion-pane#login-2 #pin div i.ion-record {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body ng-controller="MainController">
+    
+    <!--<ion-pane id="login-1">
+		<div id="login-inner">
+			<ion-content>
+				<p id="login-header">Welcome<span>Lorem ipsum dolor sit amet, recusandae sequi velit, aut fuga iste ea architecto, unde culpa.</span></p>
+				<input type="text" ng-model="email" placeholder="Email address" ng-focus="hideKeyboard()" ng-blur="showKeyboard()">
+				<input type="password" ng-model="password" placeholder="Password" readonly>
+				<input type="button" value="Login">
+				<p id="help">Password | Register</p>
+			</ion-content>
+			<ion-digit-keyboard settings="keyboardSettings" ng-show="keyboardVisible" style="margin-bottom: 15px;"></ion-digit-keyboard>
+		</div>
+	</ion-pane>-->
+    
+    <ion-pane id="login-2">
+        <ion-content>
+            <p id="login-header">Login</p>
+            <p id="pin-title">Enter pin code :</p>
+            <div id="pin">
+                <div><i class="icon ion-record" ng-show="pinDotVisible['1']"></i></div>
+                <div><i class="icon ion-record" ng-show="pinDotVisible['2']"></i></div>
+                <div><i class="icon ion-record" ng-show="pinDotVisible['3']"></i></div>
+                <div><i class="icon ion-record" ng-show="pinDotVisible['4']"></i></div>
+                <i class="icon ion-backspace" ng-show="canErase" ng-click="doErase()"></i>
+            </div>
+            <div id="status" style="margin-top: 15px; font-size: 18px;">
+                <p style="color: #2ecc71;" ng-show="success === true">Success !</p>
+                <p style="color: #e74c3c;" ng-show="success === false">Failed.</p>
+            </div>
+        </ion-content>
+        <ion-digit-keyboard settings="keyboardSettings" ng-show="keyboardVisible" style="margin-bottom: 15px;"></ion-digit-keyboard>
+    </ion-pane>
+
+</body>
+
+</html>

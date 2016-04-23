@@ -1,0 +1,362 @@
+
+$dk-bg-color: transparent;
+$dk-btn-border-size: 1px;
+$dk-btn-height: 60px;
+$dk-btn-font-size: 24px;
+
+// Private variables (mostly default)
+$dk-btn-bg-color: #ccc;
+$dk-btn-border-color: #333;
+$dk-btn-text-color: #333;
+$dk-btn-action-color: #333;
+$dk-btn-click-bg-color: #ddd;
+$dk-btn-click-text-color: #444;
+
+$light: #fff !default;
+$stable: #f8f8f8 !default;
+$positive: #387ef5 !default;
+$calm: #11c1f3 !default;
+$balanced: #33cd5f !default;
+$energized: #ffc900 !default;
+$assertive: #ef473a !default;
+$royal: #886aea !default;
+$dark: #444 !default;
+$opaque-black: rgba(#000, 0.75);
+$opaque-white: rgba(#fff, 0.75);
+
+.digit-keyboard {
+	position: absolute;
+	left: 0; right: 0; bottom: 0;
+	background: $dk-bg-color;
+	font-size: $dk-btn-font-size;
+	z-index: 5000;
+	
+	* {
+		box-sizing: border-box;
+	}
+	
+	// Row
+	.digit-keyboard-row {
+		display: flex;
+		flex-direction: row;
+		border-bottom: $dk-btn-border-size solid $dk-btn-border-color;
+		
+		// Wrapper
+		.digit-keyboard-key-wrapper {
+			flex: 1;
+			text-align: center;
+			position: relative;
+			height: $dk-btn-height;
+			
+			// Key
+			.digit-keyboard-key {
+				display: block;
+				margin: 0 auto;
+				position: absolute;
+				left: 0; top: 0; right: 0; bottom: 0;
+				border-right: $dk-btn-border-size solid $dk-btn-border-color;
+				border-left: $dk-btn-border-size solid $dk-btn-border-color;
+				//background: $dk-btn-bg-color;
+				//color: $dk-btn-text-color;
+				line-height: $dk-btn-height;
+				
+				-webkit-transition: background-color 100ms linear;
+				-moz-transition: background-color 100ms linear;
+				-o-transition: background-color 100ms linear;
+				-ms-transition: background-color 100ms linear;
+				transition: background-color 100ms linear;
+				
+				// Number
+				.digit-keyboard-key-number {
+					font-size: 1em;
+					vertical-align: middle;
+					display: inline-block;
+					line-height: normal;
+					text-align: center;
+					margin-top: -0.40em;
+				
+					// Letters
+					.digit-keyboard-key-letters {
+						font-size: (($dk-btn-font-size*40)/100);
+						line-height: (($dk-btn-font-size*40)/100);
+						height: (($dk-btn-font-size*40)/100);
+						margin-top: -0.25em;
+
+						&.hidden {
+							visibility: hidden;
+						}
+					}
+				}
+				
+				// Action
+				.digit-keyboard-key-action {
+					position: absolute;
+					left: 0; top: 0; right: 0; bottom: 0;
+					line-height: $dk-btn-height;
+					font-size: $dk-btn-font-size;
+				}
+				
+				/*&.activated {
+					//background: $dk-btn-click-bg-color;
+					
+					.digit-keyboard-key-number {
+						//color: $dk-btn-click-text-color;
+					}
+				}*/
+			}
+			
+			&.hidden {
+				visibility: hidden;
+			}
+				
+			&:first-child .digit-keyboard-key {
+				border-right: none;
+			}
+			
+			&:last-child .digit-keyboard-key {
+				border-left: none;
+				
+			}
+		}
+		
+		&:first-child {
+			border-top: $dk-btn-border-size solid $dk-btn-border-color;
+		}
+		
+		&:last-child {
+			border: none;
+			
+			.digit-keyboard-key-wrapper {
+				.digit-keyboard-key {
+					border-bottom: $dk-btn-border-size solid $dk-btn-border-color;
+				}
+			}
+		}
+	}
+	
+	// Align center
+	&.align-center {
+		margin: 0 auto;
+	}
+	
+	// Align left
+	&.align-left {
+		margin-right: auto;
+	}
+	
+	// Align right
+	&.align-right {
+		margin-left: auto;
+	}
+	
+	// No letters
+	&.no-letters {		
+		.digit-keyboard-row {
+			.digit-keyboard-key-wrapper {
+				.digit-keyboard-key {
+					.digit-keyboard-key-number {
+						margin-top: -0.30em;
+
+						.digit-keyboard-key-letters {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	// Round buttons
+	&.round-buttons {		
+		.digit-keyboard-row {
+			border: none;
+			
+			.digit-keyboard-key-wrapper {
+				margin: 10px 0 0 0;
+				
+				.digit-keyboard-key {
+					width: $dk-btn-height;
+					-webkit-border-radius: 100%;
+					-moz-border-radius: 100%;
+					border-radius: 100%;
+					border: $dk-btn-border-size solid $dk-btn-border-color;
+				}
+			}
+				
+			&:last-child .digit-keyboard-key-wrapper {
+				margin-bottom: 10px;
+			}
+		}
+		
+		&.no-letters {		
+			.digit-keyboard-row {
+				.digit-keyboard-key-wrapper {
+					.digit-keyboard-key {
+						.digit-keyboard-key-number {
+							height: (($dk-btn-height*96)/100);
+							line-height: (($dk-btn-height*96)/100);
+						}
+					}
+				}
+			}
+		}
+	}	
+	
+	/*
+	 * Keyboard color styles
+	 */
+	&.keyboard-light {
+		* { border-color: darken($light, 10%) !important; }
+		.digit-keyboard-key {
+			background: $light;
+			color: #444;
+			
+			&.activated {
+				background: darken($light, 10%);
+			}
+		}
+	}
+	
+	&.keyboard-stable {
+		* { border-color: darken($stable, 10%) !important; }
+		.digit-keyboard-key {
+			background: $stable;
+			color: #444;
+			
+			&.activated {
+				background: darken($stable, 10%);
+			}
+		}
+	}
+	
+	&.keyboard-positive {
+		* { border-color: darken($positive, 10%) !important; }
+		.digit-keyboard-key {
+			background: $positive;
+			color: #fff;
+			
+			&.activated {
+				background: darken($positive, 10%);
+			}
+		}
+	}
+	
+	&.keyboard-calm {
+		* { border-color: darken($calm, 10%) !important; }
+		.digit-keyboard-key {
+			background: $calm; 
+			color: #fff;
+			
+			&.activated {
+				background: darken($calm, 10%);
+			}
+		}
+	}
+	
+	&.keyboard-balanced {
+		* { border-color: darken($balanced, 10%) !important; }
+		.digit-keyboard-key {
+			background: $balanced;
+			color: #fff;
+			
+			&.activated {
+				background: darken($balanced, 10%);
+			}
+		}
+	}
+	
+	&.keyboard-energized {
+		* { border-color: darken($energized, 5%) !important; }
+		.digit-keyboard-key {
+			background: $energized;
+			color: #fff;
+			
+			&.activated {
+				background: darken($energized, 5%);
+			}
+		}
+	}
+	
+	&.keyboard-assertive {
+		* { border-color: darken($assertive, 10%) !important; }
+		.digit-keyboard-key {
+			background: $assertive;
+			color: #fff;
+			
+			&.activated {
+				background: darken($assertive, 10%);
+			}
+		}
+	}
+	
+	&.keyboard-royal {
+		* { border-color: darken($royal, 8%) !important; }
+		.digit-keyboard-key {
+			background: $royal;
+			color: #fff;
+			
+			&.activated {
+				background: darken($royal, 8%);
+			}
+		}
+	}
+	
+	&.keyboard-dark {
+		* { border-color: darken($dark, 10%) !important; }
+		.digit-keyboard-key {
+			background: $dark;
+			color: #fff;
+			
+			&.activated {
+				background: darken($dark, 10%);
+			}
+		}
+	}
+	
+	&.keyboard-opaque-black {
+		* { border-color: $opaque-black !important; }
+		.digit-keyboard-key {
+			background: rgba(#000, 0.15);
+			color: $opaque-black;
+			
+			&.activated {
+				background: rgba(#000, 0.25);
+			}
+		}
+	}
+	
+	&.keyboard-opaque-white {
+		* { border-color: $opaque-white !important; }
+		.digit-keyboard-key {
+			background: rgba(#fff, 0.15);
+			color: $opaque-white;
+			
+			&.activated {
+				background: rgba(#fff, 0.25);
+			}
+		}
+	}
+
+	// Animation: slide-up
+	&.animation-slide-up {
+		-webkit-transition: transform linear 150ms;
+		transition: transform linear 150ms;
+		transform: translate3d(0,0,0);
+	}
+
+	&.animation-slide-up.ng-hide {
+		transform: translate3d(0,100%,0);
+	}
+	
+	// Animation: pop
+	&.animation-pop {
+		-webkit-transition: transform linear 150ms;
+		transition: transform linear 150ms;
+		transform: scale3d(1, 1, 1);
+	}
+
+	&.animation-pop.ng-hide {
+		transform: scale3d(0, 0, 1);
+	}
+}
+

@@ -1,0 +1,28 @@
+# OS Metadata, caches for programs
+.DS_Store
+._*
+.Trash*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Backup files
+*.sw[g-p]
+*.bak
+*~
+*#
+
+# IDEs
+*.as3proj
+.buildpath
+.c9revisions/
+.cproject
+.project
+.idea/
+.settings*
+.metadata/
+nbproject/
+
+# Generated
+/node_modules/

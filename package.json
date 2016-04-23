@@ -1,0 +1,30 @@
+{
+  "name": "ion-digit-keyboard",
+  "version": "1.0.0",
+  "description": "A digital keyboard for apps build using the Ionic framework.",
+  "main": "./dist/ion-digit-keyboard.min.js",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-css2js": "^1.0.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-ng-html2js": "^0.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ionic",
+    "keyboard",
+    "digital",
+    "numbers"
+  ],
+  "author": "Skol (Vincent Letellier)",
+  "license": "MIT"
+}
