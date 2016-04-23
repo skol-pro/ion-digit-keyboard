@@ -9,7 +9,7 @@ Read the `readme.md` for the the installation and basics knowledges.
 
 Let say you made a simple login screen like that and you want to add the Ionic Digit Keyboard plugin to it.
 
-![Tutorial 1 screen A](https://github.com/biggbest/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_A.png?raw=true)
+![Tutorial 1 screen A](https://github.com/skol-pro/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_A.png?raw=true)
 
 ```html
 <body ng-controller="MainController">
@@ -49,7 +49,7 @@ function MainController($scope) {
 	}
 }
 ```
-![Tutorial 1 screen B](https://github.com/biggbest/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_B.png?raw=true)
+![Tutorial 1 screen B](https://github.com/skol-pro/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_B.png?raw=true)
 
 Nice ! Now, we'll need a submit button, and why not a remove button ?
 ```javascript
@@ -111,7 +111,7 @@ function MainController($scope) {
 ```
 Great, pretty good looking ! Final touch, we could make the keyboard a bit higher on the screen, by adding a bottom-margin to the keyboard for-example.
 
-![Tutorial 1 screen C](https://github.com/biggbest/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_C.png?raw=true)
+![Tutorial 1 screen C](https://github.com/skol-pro/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_C.png?raw=true)
 
 Currently, tapping the email input will show up the default keyboard over the digit keyboard, so let's hide the digit keyboard when the email input is focussed, and show it back when it's blured.
 ```html
@@ -153,7 +153,7 @@ style: {
 ```
 Not very beautiful of course, it's just for demonstration purposes.
 
-![Tutorial 1 screen D](https://github.com/biggbest/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_D.png?raw=true)
+![Tutorial 1 screen D](https://github.com/skol-pro/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_D.png?raw=true)
 
 To conclude with this tutorial, let's imagine we want the login form to remains compact and to be centered on higher screens like tablets.
 To achieve that, simple wrap `ion-content` in a new **div** and add some media queries style rules:
@@ -186,7 +186,7 @@ To achieve that, simple wrap `ion-content` in a new **div** and add some media q
 </style>
 ```
 Of course feel free to add some size conditions code so that the digit keyboard is not hidding when the email input is focuessed on tablets.
-![Tutorial 1 screen E](https://github.com/biggbest/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_E.png?raw=true)
+![Tutorial 1 screen E](https://github.com/skol-pro/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_E.png?raw=true)
 Set back some of the previous keyboard settings and adjust style:
 ```html
 <style>
@@ -203,6 +203,6 @@ Set back some of the previous keyboard settings and adjust style:
 	}
 </style>
 ```
-![Tutorial 1 screen F](https://github.com/biggbest/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_F.png?raw=true)
+![Tutorial 1 screen F](https://github.com/skol-pro/ion-digit-keyboard/blob/master/tutorials/resources/tutorial_1_F.png?raw=true)
 
 Hope you enjoyed !
