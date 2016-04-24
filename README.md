@@ -47,7 +47,7 @@ You can add the **ion-digit-keyboard** directive globaly, right before the body 
 </body>
 ```
 
-Or in a specific view, be be sure to put it outside of the view content:
+Or in a specific view, be sure to put it outside of the view content:
 ```html
 <!-- myView.html -->
 <ion-view>
@@ -102,7 +102,7 @@ If you want to show the keyboard when you click on the input, simply use the **n
 	<ion-content>
 		<input type="text" ng-model="numbers" ng-click="showKeyboard($event)" readonly>
 	</ion-content>
-	<ion-digit-keyboard settings="keyboardSettings" ngShow="keyboardVisible"></ion-digit-keyboard>
+	<ion-digit-keyboard settings="keyboardSettings" ng-show="keyboardVisible"></ion-digit-keyboard>
 </ion-view>
 ```
 ```javascript
