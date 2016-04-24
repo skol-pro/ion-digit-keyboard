@@ -46,7 +46,7 @@ gulp.task('css2js', ['sass'], function () {
 gulp.task('bundle', ['clean', 'html2js', 'css2js'], function (done) {
     gulp.src(['./dist/*.js', './src/*.js'])
         .pipe(concat('ion-digit-keyboard.min.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/'))
         .on('end', function () {
             del(['dist/templates.js', 'dist/ion-digit-keyboard.min.css']);
